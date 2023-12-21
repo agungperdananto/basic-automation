@@ -1,38 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.9.13 on darwin)" generated="20231209 13:48:03.786" rpa="false" schemaversion="4">
-<suite id="s1" name="Test-Suite" source="/Users/agungperdananto/Workspace/automation/basic-automation/test-web/test-suite.robot">
-<test id="s1-t1" name="testcase-login-1" line="8">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20231221 22:27:24.623" rpa="false" schemaversion="4">
+<suite id="s1" name="Test-Suite-1" source="D:\me\rizky-hanifudin\basic-automation\project-demo\test-suite-1.robot">
+<test id="s1-t1" name="Login Success" line="14">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>http://127.0.0.1:8000</arg>
-<arg>chrome</arg>
+<arg>${HOST}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231209 13:48:03.880" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
-<status status="PASS" starttime="20231209 13:48:03.880" endtime="20231209 13:48:06.849"/>
+<msg timestamp="20231221 22:27:24.935" level="INFO">Opening browser 'headlesschrome' to base url 'https://staging.erp.fumui.my.id/login'.</msg>
+<status status="PASS" starttime="20231221 22:27:24.935" endtime="20231221 22:27:31.102"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231221 22:27:31.102" endtime="20231221 22:27:31.741"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>superadmin@maskit.co.id</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231221 22:27:31.741" level="INFO">Typing text 'superadmin@maskit.co.id' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20231221 22:27:31.741" endtime="20231221 22:27:31.842"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>superadmin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231221 22:27:31.842" level="INFO">Typing text 'superadmin' into text field 'name:password'.</msg>
+<status status="PASS" starttime="20231221 22:27:31.842" endtime="20231221 22:27:31.907"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://a[@href='/login']</arg>
+<arg>xpath://button[@type='submit']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231209 13:48:06.850" level="INFO">Clicking element 'xpath://a[@href='/login']'.</msg>
-<status status="PASS" starttime="20231209 13:48:06.849" endtime="20231209 13:48:06.956"/>
+<msg timestamp="20231221 22:27:31.907" level="INFO">Clicking element 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" starttime="20231221 22:27:31.907" endtime="20231221 22:27:31.943"/>
 </kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>xpath://input[@name='email']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20231209 13:48:06.962" level="INFO">Current page contains element 'xpath://input[@name='email']'.</msg>
-<status status="PASS" starttime="20231209 13:48:06.956" endtime="20231209 13:48:06.962"/>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>xpath://a[@href='/']</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<msg timestamp="20231221 22:27:31.952" level="INFO">Current page does not contain element 'xpath://a[@href='/']'.</msg>
+<status status="PASS" starttime="20231221 22:27:31.943" endtime="20231221 22:27:31.952"/>
 </kw>
-<status status="PASS" starttime="20231209 13:48:03.880" endtime="20231209 13:48:06.962"/>
+<status status="PASS" starttime="20231221 22:27:24.935" endtime="20231221 22:27:31.952"/>
 </test>
-<status status="PASS" starttime="20231209 13:48:03.787" endtime="20231209 13:48:06.963"/>
+<test id="s1-t2" name="Login Failed" line="22">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HOST}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231221 22:27:31.954" level="INFO">Opening browser 'headlesschrome' to base url 'https://staging.erp.fumui.my.id/login'.</msg>
+<status status="PASS" starttime="20231221 22:27:31.954" endtime="20231221 22:27:35.575"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231221 22:27:35.577" endtime="20231221 22:27:36.010"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>superadmin@maskit.co.id</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231221 22:27:36.011" level="INFO">Typing text 'superadmin@maskit.co.id' into text field 'name:email'.</msg>
+<status status="PASS" starttime="20231221 22:27:36.011" endtime="20231221 22:27:36.107"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>passwordsalah</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231221 22:27:36.107" level="INFO">Typing text 'passwordsalah' into text field 'name:password'.</msg>
+<status status="PASS" starttime="20231221 22:27:36.107" endtime="20231221 22:27:36.178"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231221 22:27:36.178" level="INFO">Clicking element 'xpath://button[@type='submit']'.</msg>
+<status status="PASS" starttime="20231221 22:27:36.178" endtime="20231221 22:27:36.213"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://div[@class='Toastify__toast-body']/div</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231221 22:27:36.214" endtime="20231221 22:27:36.654"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${error_message}</var>
+<arg>xpath://div[@class='Toastify__toast-body']/div</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231221 22:27:36.671" level="INFO">${error_message} = </msg>
+<status status="PASS" starttime="20231221 22:27:36.654" endtime="20231221 22:27:36.671"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${error_message}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231221 22:27:36.673" level="INFO"/>
+<status status="PASS" starttime="20231221 22:27:36.671" endtime="20231221 22:27:36.673"/>
+</kw>
+<status status="PASS" starttime="20231221 22:27:31.953" endtime="20231221 22:27:36.673"/>
+</test>
+<status status="PASS" starttime="20231221 22:27:24.626" endtime="20231221 22:27:36.673"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test-Suite">Test-Suite</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="Test-Suite-1">Test-Suite-1</stat>
 </suite>
 </statistics>
 <errors>
