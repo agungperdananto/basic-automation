@@ -1,40 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.9.13 on darwin)" generated="20231209 13:48:03.786" rpa="false" schemaversion="4">
-<suite id="s1" name="Test-Suite" source="/Users/agungperdananto/Workspace/automation/basic-automation/test-web/test-suite.robot">
-<test id="s1-t1" name="testcase-login-1" line="8">
+<robot generator="Robot 6.1.1 (Python 3.10.13 on linux)" generated="20231223 12:03:51.905" rpa="false" schemaversion="4">
+<suite id="s1" name="Test-Suite" source="/workspaces/basic-automation/test-web/test-suite.robot">
+<test id="s1-t1" name="testcase-login-1" line="9">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>http://127.0.0.1:8000</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231209 13:48:03.880" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
-<status status="PASS" starttime="20231209 13:48:03.880" endtime="20231209 13:48:06.849"/>
+<msg timestamp="20231223 12:03:52.063" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<msg timestamp="20231223 12:03:52.100" level="WARN">The chromedriver version (122.0.6200.0) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (120.0.6099.109); currently, chromedriver 120.0.6099.109 is recommended for chrome 120.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20231223 12:03:52.728" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20231223 12:03:52.729" level="FAIL">SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /home/codespace/.cache/selenium/chrome/linux64/120.0.6099.109/chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Stacktrace:
+#0 0x5580647eeba3 &lt;unknown&gt;
+#1 0x5580644d26d6 &lt;unknown&gt;
+#2 0x55806450726a &lt;unknown&gt;
+#3 0x558064502f0d &lt;unknown&gt;
+#4 0x55806454c84c &lt;unknown&gt;
+#5 0x55806453fec3 &lt;unknown&gt;
+#6 0x558064510b33 &lt;unknown&gt;
+#7 0x55806451154e &lt;unknown&gt;
+#8 0x5580647b1b9b &lt;unknown&gt;
+#9 0x5580647b59b3 &lt;unknown&gt;
+#10 0x55806479f0f5 &lt;unknown&gt;
+#11 0x5580647b6630 &lt;unknown&gt;
+#12 0x55806478283f &lt;unknown&gt;
+#13 0x5580647dca38 &lt;unknown&gt;
+#14 0x5580647dcc02 &lt;unknown&gt;
+#15 0x5580647edd44 &lt;unknown&gt;
+#16 0x7fc44a905609 start_thread
+</msg>
+<status status="FAIL" starttime="20231223 12:03:52.063" endtime="20231223 12:03:52.730"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://a[@href='/login']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231209 13:48:06.850" level="INFO">Clicking element 'xpath://a[@href='/login']'.</msg>
-<status status="PASS" starttime="20231209 13:48:06.849" endtime="20231209 13:48:06.956"/>
+<status status="NOT RUN" starttime="20231223 12:03:52.730" endtime="20231223 12:03:52.730"/>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <arg>xpath://input[@name='email']</arg>
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20231209 13:48:06.962" level="INFO">Current page contains element 'xpath://input[@name='email']'.</msg>
-<status status="PASS" starttime="20231209 13:48:06.956" endtime="20231209 13:48:06.962"/>
+<status status="NOT RUN" starttime="20231223 12:03:52.730" endtime="20231223 12:03:52.730"/>
 </kw>
-<status status="PASS" starttime="20231209 13:48:03.880" endtime="20231209 13:48:06.962"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>test@mail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:52.731" endtime="20231223 12:03:52.731"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>123456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:52.731" endtime="20231223 12:03:52.731"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:52.731" endtime="20231223 12:03:52.731"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://span[@id='welcome']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:52.732" endtime="20231223 12:03:52.732"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:52.732" endtime="20231223 12:03:52.732"/>
+</kw>
+<status status="FAIL" starttime="20231223 12:03:52.062" endtime="20231223 12:03:52.732">SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /home/codespace/.cache/selenium/chrome/linux64/120.0.6099.109/chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Stacktrace:
+#0 0x5580647eeba3 &lt;unknown&gt;
+#1 0x5580644d26d6 &lt;unknown&gt;
+#2 0x55806450726a &lt;unknown&gt;
+#3 0x558064502f0d &lt;unknown&gt;
+#4 0x55806454c84c &lt;unknown&gt;
+#5 0x55806453fec3 &lt;unknown&gt;
+#6 0x558064510b33 &lt;unknown&gt;
+#7 0x55806451154e &lt;unknown&gt;
+#8 0x5580647b1b9b &lt;unknown&gt;
+#9 0x5580647b59b3 &lt;unknown&gt;
+#10 0x55806479f0f5 &lt;unknown&gt;
+#11 0x5580647b6630 &lt;unknown&gt;
+#12 0x55806478283f &lt;unknown&gt;
+#13 0x5580647dca38 &lt;unknown&gt;
+#14 0x5580647dcc02 &lt;unknown&gt;
+#15 0x5580647edd44 &lt;unknown&gt;
+#16 0x7fc44a905609 start_thread
+</status>
 </test>
-<status status="PASS" starttime="20231209 13:48:03.787" endtime="20231209 13:48:06.963"/>
+<test id="s1-t2" name="testcase-login-2" line="20">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://127.0.0.1:8000</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231223 12:03:52.738" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<msg timestamp="20231223 12:03:52.777" level="WARN">The chromedriver version (122.0.6200.0) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (120.0.6099.109); currently, chromedriver 120.0.6099.109 is recommended for chrome 120.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20231223 12:03:53.395" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20231223 12:03:53.396" level="FAIL">SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /home/codespace/.cache/selenium/chrome/linux64/120.0.6099.109/chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Stacktrace:
+#0 0x55817392cba3 &lt;unknown&gt;
+#1 0x5581736106d6 &lt;unknown&gt;
+#2 0x55817364526a &lt;unknown&gt;
+#3 0x558173640f0d &lt;unknown&gt;
+#4 0x55817368a84c &lt;unknown&gt;
+#5 0x55817367dec3 &lt;unknown&gt;
+#6 0x55817364eb33 &lt;unknown&gt;
+#7 0x55817364f54e &lt;unknown&gt;
+#8 0x5581738efb9b &lt;unknown&gt;
+#9 0x5581738f39b3 &lt;unknown&gt;
+#10 0x5581738dd0f5 &lt;unknown&gt;
+#11 0x5581738f4630 &lt;unknown&gt;
+#12 0x5581738c083f &lt;unknown&gt;
+#13 0x55817391aa38 &lt;unknown&gt;
+#14 0x55817391ac02 &lt;unknown&gt;
+#15 0x55817392bd44 &lt;unknown&gt;
+#16 0x7f2deebcd609 start_thread
+</msg>
+<status status="FAIL" starttime="20231223 12:03:52.737" endtime="20231223 12:03:53.396"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://a[@href='/login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:53.396" endtime="20231223 12:03:53.397"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://input[@name='email']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:53.397" endtime="20231223 12:03:53.397"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:email</arg>
+<arg>test@mail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:53.397" endtime="20231223 12:03:53.397"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:password</arg>
+<arg>7uyhgt7ygu7</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:53.397" endtime="20231223 12:03:53.397"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:53.398" endtime="20231223 12:03:53.398"/>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<arg>xpath://span[@id='welcome']</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:53.398" endtime="20231223 12:03:53.398"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20231223 12:03:53.398" endtime="20231223 12:03:53.398"/>
+</kw>
+<status status="FAIL" starttime="20231223 12:03:52.737" endtime="20231223 12:03:53.398">SessionNotCreatedException: Message: session not created: Chrome failed to start: exited normally.
+  (session not created: DevToolsActivePort file doesn't exist)
+  (The process started from chrome location /home/codespace/.cache/selenium/chrome/linux64/120.0.6099.109/chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Stacktrace:
+#0 0x55817392cba3 &lt;unknown&gt;
+#1 0x5581736106d6 &lt;unknown&gt;
+#2 0x55817364526a &lt;unknown&gt;
+#3 0x558173640f0d &lt;unknown&gt;
+#4 0x55817368a84c &lt;unknown&gt;
+#5 0x55817367dec3 &lt;unknown&gt;
+#6 0x55817364eb33 &lt;unknown&gt;
+#7 0x55817364f54e &lt;unknown&gt;
+#8 0x5581738efb9b &lt;unknown&gt;
+#9 0x5581738f39b3 &lt;unknown&gt;
+#10 0x5581738dd0f5 &lt;unknown&gt;
+#11 0x5581738f4630 &lt;unknown&gt;
+#12 0x5581738c083f &lt;unknown&gt;
+#13 0x55817391aa38 &lt;unknown&gt;
+#14 0x55817391ac02 &lt;unknown&gt;
+#15 0x55817392bd44 &lt;unknown&gt;
+#16 0x7f2deebcd609 start_thread
+</status>
+</test>
+<status status="FAIL" starttime="20231223 12:03:51.906" endtime="20231223 12:03:53.400"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test-Suite">Test-Suite</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Test-Suite">Test-Suite</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20231223 12:03:52.100" level="WARN">The chromedriver version (122.0.6200.0) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (120.0.6099.109); currently, chromedriver 120.0.6099.109 is recommended for chrome 120.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20231223 12:03:52.777" level="WARN">The chromedriver version (122.0.6200.0) detected in PATH at /usr/local/bin/chromedriver might not be compatible with the detected chrome version (120.0.6099.109); currently, chromedriver 120.0.6099.109 is recommended for chrome 120.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
