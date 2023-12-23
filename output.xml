@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.9.13 on darwin)" generated="20231209 13:48:03.786" rpa="false" schemaversion="4">
-<suite id="s1" name="Test-Suite" source="/Users/agungperdananto/Workspace/automation/basic-automation/test-web/test-suite.robot">
-<test id="s1-t1" name="testcase-login-1" line="8">
+<robot generator="Robot 6.1.1 (Python 3.9.2 on win32)" generated="20231223 20:33:51.957" rpa="false" schemaversion="4">
+<suite id="s1" name="Test3" source="C:\Users\Dafit_\Desktop\basic-automation\test3.robot">
+<test id="s1-t1" name="Login to Website" line="5">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>http://127.0.0.1:8000</arg>
+<arg>https://mdafitapriansyah.000webhostapp.com/projek_akhir/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231209 13:48:03.880" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
-<status status="PASS" starttime="20231209 13:48:03.880" endtime="20231209 13:48:06.849"/>
+<msg timestamp="20231223 20:33:52.190" level="INFO">Opening browser 'chrome' to base url 'https://mdafitapriansyah.000webhostapp.com/projek_akhir/'.</msg>
+<status status="PASS" starttime="20231223 20:33:52.190" endtime="20231223 20:33:58.317"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://a[@href='/login']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231209 13:48:06.850" level="INFO">Clicking element 'xpath://a[@href='/login']'.</msg>
-<status status="PASS" starttime="20231209 13:48:06.849" endtime="20231209 13:48:06.956"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name='username']</arg>
+<arg>guest</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231223 20:33:58.325" level="INFO">Typing text 'guest' into text field '//input[@name='username']'.</msg>
+<status status="PASS" starttime="20231223 20:33:58.323" endtime="20231223 20:33:58.471"/>
 </kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>xpath://input[@name='email']</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20231209 13:48:06.962" level="INFO">Current page contains element 'xpath://input[@name='email']'.</msg>
-<status status="PASS" starttime="20231209 13:48:06.956" endtime="20231209 13:48:06.962"/>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@name='password']</arg>
+<arg>guest</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231223 20:33:58.471" level="INFO">Typing password into text field '//input[@name='password']'.</msg>
+<msg timestamp="20231223 20:33:58.519" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231223 20:33:58.596" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231223 20:33:58.471" endtime="20231223 20:33:58.596"/>
 </kw>
-<status status="PASS" starttime="20231209 13:48:03.880" endtime="20231209 13:48:06.962"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231223 20:33:58.596" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20231223 20:33:58.596" endtime="20231223 20:34:05.882"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231223 20:34:05.886" endtime="20231223 20:34:08.100"/>
+</kw>
+<status status="PASS" starttime="20231223 20:33:52.190" endtime="20231223 20:34:08.100"/>
 </test>
-<status status="PASS" starttime="20231209 13:48:03.787" endtime="20231209 13:48:06.963"/>
+<status status="PASS" starttime="20231223 20:33:51.957" endtime="20231223 20:34:08.100"/>
 </suite>
 <statistics>
 <total>
@@ -32,7 +46,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test-Suite">Test-Suite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test3">Test3</stat>
 </suite>
 </statistics>
 <errors>

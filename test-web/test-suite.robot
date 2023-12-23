@@ -7,13 +7,13 @@ Library           SeleniumLibrary
 *** Test Cases ***
 
 testcase-login-1
-    Open Browser    http://127.0.0.1:8000    chrome
-    Click Element     xpath://a[@href='/login']
+    Open Browser    https://chemons.site/ chrome
+    Click Element     xpath:https://chemons.site/login
     Page Should Contain Element   xpath://input[@name='email']
-    input text        name:email       test@mail.com
-    Input Text    name:password    123456
-    Click Element     xpath://button[@type='submit']
-    Page Should Contain Element    xpath://span[@id='welcome']
+    input text        name:email       omama@getnada.com
+    Input Text    name:password    @Aa12345
+    Click Element     xpath://*[@id="root"]/div[3]/div/form/button
+    Page Should Contain Element    xpath: //*[@id="root"]/div[3]/label
     Close Browser
 
 
