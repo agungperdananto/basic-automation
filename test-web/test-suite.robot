@@ -1,28 +1,21 @@
 *** Settings ***
 Library           SeleniumLibrary
 
-*** variables ***
-
+*** Variables ***
+${LOGIN_URL}      https://github.com/login
+${BROWSER}        safari  # Ganti dengan browser yang Anda gunakan
 
 *** Test Cases ***
+Login to GitHub
+    Open Browser    ${LOGIN_URL}    ${BROWSER}
+    Input Text      id=login_field    Your_GitHub_Username
+    Input Password  id=password    Your_GitHub_Password
+    Click Button    Sign in
+    Capture Page Screenshot
+    [Documentation]    Capture a screenshot for reference
+    [Tags]    Login
 
-testcase-login-1
-    Open Browser    http://127.0.0.1:8000    chrome
-    Click Element     xpath://a[@href='/login']
-    Page Should Contain Element   xpath://input[@name='email']
-    input text        name:email       test@mail.com
-    Input Text    name:password    123456
-    Click Element     xpath://button[@type='submit']
-    Page Should Contain Element    xpath://span[@id='welcome']
-    Close Browser
-
-
-testcase-login-2
-    Open Browser    http://127.0.0.1:8000    chrome
-    Click Element     xpath://a[@href='/login']
-    Page Should Contain Element   xpath://input[@name='email']
-    input text        name:email       test@mail.com
-    Input Text    name:password    7uyhgt7ygu7
-    Click Element     xpath://button[@type='submit']
-    Page Should Not Contain Element    xpath://span[@id='welcome']
-    Close Browser
+*** Keywords ***
+Input Password
+    [Arguments]    ${locator}    ${password}
+    Input Password    ${locator}    ${password}
